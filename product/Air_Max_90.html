@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="js/script.js"></script>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nike React Infinity - Product Details</title>
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="../js/tailwind_3.4.16.min.js"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#000000',secondary:'#ffffff'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="../css/remixicon.min.css">
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .glassmorphism {
@@ -63,7 +63,7 @@ color: #fbbf24;
 </div>
 <!-- Navigation -->
 <nav class="hidden md:flex items-center space-x-8">
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-white hover:text-gray-300 transition-colors font-medium">Home</a>
+<a href="../home.html" class="text-white hover:text-gray-300 transition-colors font-medium">Home</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">Shop</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">About</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">Contact</a>
@@ -82,13 +82,13 @@ color: #fbbf24;
 <div class="pt-24 pb-4 px-6 bg-gray-50">
 <div class="max-w-7xl mx-auto">
 <nav class="flex items-center space-x-2 text-sm">
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-gray-500 hover:text-black transition-colors">
+<a href="../home.html" class="text-gray-500 hover:text-black transition-colors">
 <div class="w-5 h-5 flex items-center justify-center">
 <i class="ri-arrow-left-line"></i>
 </div>
 </a>
 <span class="text-gray-400">/</span>
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-gray-500 hover:text-black transition-colors">Shop</a>
+<a href="../home.html" class="text-gray-500 hover:text-black transition-colors">Shop</a>
 <span class="text-gray-400">/</span>
 <span class="text-black font-medium">React Infinity</span>
 </nav>
@@ -101,20 +101,20 @@ color: #fbbf24;
 <!-- Product Images -->
 <div class="space-y-4">
 <div class="aspect-square overflow-hidden rounded-xl bg-gray-50">
-<img id="mainImage" src="https://image2url.com/images/1763338942014-fcfafe8c-5d1a-4fff-93fa-c97360242312.jpg" alt="Nike React Infinity" class="w-full h-full object-cover object-top">
+<img id="mainImage" src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20detailed%20product%20shot%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting%20high%20resolution&width=600&height=600&seq=main&orientation=squarish" alt="Nike React Infinity" class="w-full h-full object-cover object-top">
 </div>
 <div class="grid grid-cols-4 gap-4">
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://image2url.com/images/1763339041983-c68887a1-1449-470e-8839-704ac6905e63.jpg" alt="Side View" class="w-full h-full object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20side%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=side&orientation=squarish" alt="Side View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://image2url.com/images/1763339092442-e9fa1f79-f788-42f1-a226-e42560d08c10.jpg" alt="Back View" class="w-full h-full object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20back%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=back&orientation=squarish" alt="Back View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://image2url.com/images/1763339163264-9293f9a9-0c05-4e51-981c-2db3c93a7aaa.jpg" alt="Sole View" class="w-full h-full object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20sole%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=sole&orientation=squarish" alt="Sole View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://image2url.com/images/1763339202729-c07ffc83-398f-464e-8e2b-9169ad1a6a7c.jpg" alt="Top View" class="w-full h-full object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20top%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=top&orientation=squarish" alt="Top View" class="w-full h-full object-cover object-top">
 </div>
 </div>
 </div>
@@ -671,21 +671,6 @@ const currentCount = parseInt(cartBadge.textContent);
 cartBadge.textContent = currentCount + quantity;
 }
 }
-</script>
-<script>
-    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
-        api_host: 'https://us.i.posthog.com',
-        autocapture: false,
-        capture_pageview: false,
-        capture_pageleave: false,
-        capture_performance: {
-            web_vitals: false,
-        },
-        rageclick: false,
-    })
-    window.shareKey = 'TLTlg1GFmAYYg0cmbaiR4w';
-    window.host = 'readdy.ai';
 </script>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nike React Infinity - Product Details</title>
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="../js/tailwind_3.4.16.min.js"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#000000',secondary:'#ffffff'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="../css/remixicon.min.css">
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .glassmorphism {
@@ -63,7 +63,7 @@ color: #fbbf24;
 </div>
 <!-- Navigation -->
 <nav class="hidden md:flex items-center space-x-8">
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-white hover:text-gray-300 transition-colors font-medium">Home</a>
+<a href="../home.html" class="text-white hover:text-gray-300 transition-colors font-medium">Home</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">Shop</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">About</a>
 <a href="#" class="text-white hover:text-gray-300 transition-colors font-medium">Contact</a>
@@ -82,13 +82,13 @@ color: #fbbf24;
 <div class="pt-24 pb-4 px-6 bg-gray-50">
 <div class="max-w-7xl mx-auto">
 <nav class="flex items-center space-x-2 text-sm">
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-gray-500 hover:text-black transition-colors">
+<a href="../home.html" class="text-gray-500 hover:text-black transition-colors">
 <div class="w-5 h-5 flex items-center justify-center">
 <i class="ri-arrow-left-line"></i>
 </div>
 </a>
 <span class="text-gray-400">/</span>
-<a href="https://readdy.ai/home/bde20d30-90a7-4499-a54f-7308a8c863a1/c6a96de4-603c-46f9-bc96-7843efde1847" class="text-gray-500 hover:text-black transition-colors">Shop</a>
+<a href="../home.html" class="text-gray-500 hover:text-black transition-colors">Shop</a>
 <span class="text-gray-400">/</span>
 <span class="text-black font-medium">React Infinity</span>
 </nav>
@@ -101,20 +101,20 @@ color: #fbbf24;
 <!-- Product Images -->
 <div class="space-y-4">
 <div class="aspect-square overflow-hidden rounded-xl bg-gray-50">
-<img id="mainImage" src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20detailed%20product%20shot%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting%20high%20resolution&width=600&height=600&seq=main&orientation=squarish" alt="Nike React Infinity" class="w-full h-full object-cover object-top">
+<img id="mainImage" src="https://image2url.com/images/1763373937163-926bc258-fe59-413b-be32-120651c28ea0.jpg" alt="Nike React Infinity" class="w-full h-full object-cover object-top">
 </div>
 <div class="grid grid-cols-4 gap-4">
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20side%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=side&orientation=squarish" alt="Side View" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763373969543-b6733afc-dea4-4407-ac45-bb86af5e5f1d.jpg" alt="Side View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20back%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=back&orientation=squarish" alt="Back View" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374004542-7d2e01ac-9704-427b-82c8-17ec65395cce.jpg" alt="Back View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20sole%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=sole&orientation=squarish" alt="Sole View" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374036664-fc839ffb-1454-47b6-b07a-95ad93caf22e.jpg" alt="Sole View" class="w-full h-full object-cover object-top">
 </div>
 <div class="aspect-square overflow-hidden rounded-lg bg-gray-50 cursor-pointer thumbnail" onclick="changeImage(this)">
-<img src="https://readdy.ai/api/search-image?query=Nike%20React%20Infinity%20running%20shoes%20black%20and%20neon%20green%20top%20view%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=150&height=150&seq=top&orientation=squarish" alt="Top View" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374070605-baed7292-c20b-4308-9c44-d539ac05d24b.jpg" alt="Top View" class="w-full h-full object-cover object-top">
 </div>
 </div>
 </div>
@@ -345,7 +345,7 @@ color: #fbbf24;
 <!-- Review 1 -->
 <div class="bg-gray-50 p-6 rounded-xl">
 <div class="flex items-center mb-4">
-<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20athletic%20woman%20runner%20smiling%20confident%20portrait%20clean%20background%20studio%20lighting&width=50&height=50&seq=reviewer1&orientation=squarish" alt="Jessica Martinez" class="w-12 h-12 rounded-full object-cover mr-4">
+<img src="https://image2url.com/images/1763374102924-eb2061da-0f03-4b8e-83f7-fb59e5b4f4bf.jpg" alt="Jessica Martinez" class="w-12 h-12 rounded-full object-cover mr-4">
 <div>
 <h4 class="font-semibold">Jessica Martinez</h4>
 <div class="flex space-x-1">
@@ -373,7 +373,7 @@ color: #fbbf24;
 <!-- Review 2 -->
 <div class="bg-gray-50 p-6 rounded-xl">
 <div class="flex items-center mb-4">
-<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20athletic%20man%20runner%20smiling%20confident%20portrait%20clean%20background%20studio%20lighting&width=50&height=50&seq=reviewer2&orientation=squarish" alt="David Thompson" class="w-12 h-12 rounded-full object-cover mr-4">
+<img src="https://image2url.com/images/1763374166003-b2a1e847-be7c-489a-9737-925627910b6c.jpg" alt="David Thompson" class="w-12 h-12 rounded-full object-cover mr-4">
 <div>
 <h4 class="font-semibold">David Thompson</h4>
 <div class="flex space-x-1">
@@ -401,7 +401,7 @@ color: #fbbf24;
 <!-- Review 3 -->
 <div class="bg-gray-50 p-6 rounded-xl">
 <div class="flex items-center mb-4">
-<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20young%20athletic%20woman%20smiling%20confident%20portrait%20clean%20background%20studio%20lighting&width=50&height=50&seq=reviewer3&orientation=squarish" alt="Amanda Chen" class="w-12 h-12 rounded-full object-cover mr-4">
+<img src="https://image2url.com/images/1763374195978-36d0838e-3cfd-4900-9e34-c282f28a8a52.jpg" alt="Amanda Chen" class="w-12 h-12 rounded-full object-cover mr-4">
 <div>
 <h4 class="font-semibold">Amanda Chen</h4>
 <div class="flex space-x-1">
@@ -440,7 +440,7 @@ color: #fbbf24;
 <!-- Related Product 1 -->
 <div class="bg-white rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
 <div class="aspect-square overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Nike%20Air%20Zoom%20Pegasus%20running%20shoes%20blue%20and%20white%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=300&height=300&seq=related1&orientation=squarish" alt="Nike Air Zoom Pegasus" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374229969-cedfd34f-a5fc-4a79-b886-9fb5aa364172.jpg" alt="Nike Air Zoom Pegasus" class="w-full h-full object-cover object-top">
 </div>
 <div class="p-4">
 <h3 class="font-semibold mb-2">Air Zoom Pegasus 40</h3>
@@ -454,7 +454,7 @@ color: #fbbf24;
 <!-- Related Product 2 -->
 <div class="bg-white rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
 <div class="aspect-square overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Nike%20Air%20Max%20270%20lifestyle%20shoes%20black%20and%20orange%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=300&height=300&seq=related2&orientation=squarish" alt="Nike Air Max 270" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374270051-79055371-5eac-48bb-bf58-f5ea8e2c7c27.jpg" alt="Nike Air Max 270" class="w-full h-full object-cover object-top">
 </div>
 <div class="p-4">
 <h3 class="font-semibold mb-2">Air Max 270</h3>
@@ -468,7 +468,7 @@ color: #fbbf24;
 <!-- Related Product 3 -->
 <div class="bg-white rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
 <div class="aspect-square overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Nike%20Free%20RN%20minimalist%20running%20shoes%20gray%20and%20white%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=300&height=300&seq=related3&orientation=squarish" alt="Nike Free RN" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374298889-6b110310-4491-4af0-95d9-dd37d0e02388.jpg" alt="Nike Free RN" class="w-full h-full object-cover object-top">
 </div>
 <div class="p-4">
 <h3 class="font-semibold mb-2">Free RN 5.0</h3>
@@ -482,7 +482,7 @@ color: #fbbf24;
 <!-- Related Product 4 -->
 <div class="bg-white rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105" style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
 <div class="aspect-square overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Nike%20Vaporfly%20racing%20shoes%20pink%20and%20black%20on%20clean%20white%20background%20minimalist%20product%20photography%20studio%20lighting&width=300&height=300&seq=related4&orientation=squarish" alt="Nike Vaporfly" class="w-full h-full object-cover object-top">
+<img src="https://image2url.com/images/1763374333612-1e05f24b-eae2-4203-b27f-08179be10af9.jpg" alt="Nike Vaporfly" class="w-full h-full object-cover object-top">
 </div>
 <div class="p-4">
 <h3 class="font-semibold mb-2">Vaporfly Next% 2</h3>
@@ -563,7 +563,7 @@ const query = url.searchParams.get('query');
 const seq = url.searchParams.get('seq');
 const orientation = url.searchParams.get('orientation');
 // Create new URL with larger dimensions
-const newSrc = `https://readdy.ai/api/search-image?query=$%7BencodeURIComponent%28query%29%7D&width=600&height=600&seq=${seq}&orientation=${orientation}`;
+const newSrc = 'https://image2url.com/images/1763374383660-96f56cbd-dde7-4d0e-95f2-cfb457a30b49.jpg';
 mainImage.src = newSrc;
 }
 </script>
@@ -671,21 +671,6 @@ const currentCount = parseInt(cartBadge.textContent);
 cartBadge.textContent = currentCount + quantity;
 }
 }
-</script>
-<script>
-    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
-        api_host: 'https://us.i.posthog.com',
-        autocapture: false,
-        capture_pageview: false,
-        capture_pageleave: false,
-        capture_performance: {
-            web_vitals: false,
-        },
-        rageclick: false,
-    })
-    window.shareKey = 'TLTlg1GFmAYYg0cmbaiR4w';
-    window.host = 'readdy.ai';
 </script>
 </body>
 </html>
