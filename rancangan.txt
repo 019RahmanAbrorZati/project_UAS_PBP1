@@ -7,9 +7,51 @@ Fitur:
 6. Riwayat
 
 Page: 
-1. dashboard
-2. Shop
-3. item (Detail Produk)
+1. dashboard.html
+2. shop.html
+3. item (Detail Produk) :
+    1. air_jordan_1_low.html :
+        + Name : Air Jordan 1 Low
+        + Kategori : Men's shoes
+        + Color Varian :
+            1. Summit White/Rattan/Off-Noir
+            - Picture 1 : "../image/AIR+JORDAN+1+LOW.jpeg"
+            - Picture 2 : "../image/AIR+JORDAN+1+LOW (1).jpeg"
+            - Picture 3 : "../image/AIR+JORDAN+1+LOW-265.jpg"
+            - Picture 4 : "../image/AIR+JORDAN+1+LOW-420.png"
+            - Price (IDR) : 1.729.000 IDR
+            - Style: 553558-153
+            - Country/Region of Origin: Vietnam
+
+        + Size :
+            - EU 40
+            - EU 40.5
+            - EU 41
+            - EU 41.5
+            - EU 42
+            - EU 42.5
+            - EU 43
+            - EU 43.5
+            - EU 44
+            - EU 44.5
+            - EU 45
+            - EU 45.5
+            - EU 46
+            - EU 46.5
+            - EU 47
+            - EU 47.5
+            - EU 48
+            - EU 48.5
+
+        + "Add to bag" button
+        
+        + "Favourite" button
+
+        + Description : "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point."
+
+        +         
+
+
 4. Keranjang
 5. Riwayat
 6. detail akun

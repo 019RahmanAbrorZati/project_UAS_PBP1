@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nike Sign In</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body, html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+    }
+
+    /* Spline menerima mouse (efek hover aktif) */
+    .bg-spline {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: auto !important;
+    }
+
+    /* Kotak login DILEWATI mouse untuk klik tidak kena background */
+    .login-wrapper {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        pointer-events: none; /* IMPORTANT */
+    }
+
+    .login-box {
+        width: 380px;
+        background: white;
+        border-radius: 18px;
+        padding: 40px 32px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        pointer-events: auto; /* Form bisa diklik */
+    }
+
+    .login-box h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    input[type=email] {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 8px;
+        font-size: 15px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        width: 100%;
+        background: #000;
+        color: white;
+        padding: 14px;
+        border-radius: 30px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND SPLINE → menerima mouse -->
+<div class="bg-spline">
+    <iframe 
+        src="https://my.spline.design/boxeshover-ZrkOuhJRUFOiCbMsVEdIHJk0/"
+        frameborder="0"
+        width="100%"
+        height="100%"
+        style="border:0;">
+    </iframe>
+</div>
+
+<!-- LOGIN UI (tidak menghalangi mouse) -->
+<div class="login-wrapper">
+    <div class="login-box">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+             style="width: 60px; margin-bottom: 20px;">
+
+        <h1>Enter your email to join us or sign in.</h1>
+
+        <p style="margin: 6px 0 20px 0;">
+            Indonesia <a href="#">Change</a>
+        </p>
+
+        <label>Email*</label>
+        <input type="email" placeholder="Email" required>
+        <p style="color:red; font-size:13px;">Required</p>
+
+        <p style="font-size:14px; margin-top:18px; line-height:1.5;">
+            By continuing, I agree to Your Store’s 
+            <a href="#">Privacy Policy</a> and 
+            <a href="#">Terms of Use</a>.
+        </p>
+
+        <button class="btn">Continue</button>
+
+    </div>
+</div>
+
+</body>
+</html>
