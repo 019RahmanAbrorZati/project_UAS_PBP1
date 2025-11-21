@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Create Your Nike Account</title>
+<title>Nike Create Account</title>
 
 <style>
     * {
@@ -20,165 +20,186 @@
         background: #000;
     }
 
-    /* BACKGROUND SPLINE — menerima mouse */
+    /* BACKGROUND SPLINE (mouse interaktif) */
     .bg-spline {
         position: fixed;
         inset: 0;
         width: 100%;
         height: 100%;
+        pointer-events: auto;
         z-index: 0;
-        pointer-events: auto !important;
     }
 
-    /* FORM WRAPPER — dilewati mouse kecuali form */
-    .form-wrapper {
+    /* WRAPPER PUSAT */
+    .register-wrapper {
         position: fixed;
         inset: 0;
         display: flex;
         justify-content: center;
-        padding-top: 40px;
-        overflow-y: auto;
+        align-items: center;
         z-index: 10;
         pointer-events: none;
     }
 
-    /* FORM KONTAINER */
-    .form-box {
-        width: 420px;
-        background: white;
+    /* KOTAK FORM */
+    .register-box {
+        width: 480px;
+        background: #fff;    /* FIX: seluruh kotak putih */
+        padding: 40px 38px;
         border-radius: 18px;
-        padding: 40px 32px;
-        margin-bottom: 60px;
         box-shadow: 0 12px 40px rgba(0,0,0,0.25);
         pointer-events: auto;
     }
 
-    h1 {
+    .register-box h1 {
         font-size: 24px;
-        margin-bottom: 10px;
-        font-weight: bold;
+        margin-bottom: 14px;
+    }
+
+    .row-2 {
+        display: flex;
+        gap: 10px;
+        width: 100%;
     }
 
     input, select {
         width: 100%;
+        border: 1px solid #aaa;
         padding: 12px;
         border-radius: 6px;
-        border: 1px solid #ccc;
-        margin-top: 10px;
         font-size: 15px;
+        margin-top: 10px;
+        background: white; /* FIX */
     }
 
-    .input-row {
-        display: flex;
-        gap: 10px;
+    .label {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: bold;
     }
 
     .checkbox-row {
         display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 15px;
+        align-items: center;
+        margin-top: 18px;
+        background: white; /* FIX */
+        padding: 6px 4px;
+        border-radius: 6px;
+    }
+
+    .checkbox-row input {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    p {
+        background: white; /* FIX */
+        padding: 6px 3px;
+        border-radius: 6px;
+        margin-top: 6px;
+        line-height: 1.4;
         font-size: 14px;
     }
 
     .btn {
-        margin-top: 25px;
+        margin-top: 24px;
         width: 100%;
-        background: #000;
-        color: white;
-        padding: 14px;
+        padding: 16px;
         border-radius: 30px;
         border: none;
         font-weight: bold;
+        font-size: 16px;
         cursor: pointer;
-        font-size: 15px;
+
+        background: black;
+        color: white; /* tetap terlihat */
     }
 
-    a { color: #0067ff; text-decoration: none; }
 </style>
 </head>
-
 <body>
 
-<!-- BACKGROUND SPLINE -->
+<!-- BACKGROUND SPLINE REACTIVE -->
 <div class="bg-spline">
     <iframe 
         src="https://my.spline.design/reactiveorb-E1QQSInSzvTUmAZo7dCLOVQ1/"
-        width="100%" height="100%" frameborder="0" style="border:0;">
+        frameborder="0"
+        width="100%"
+        height="100%"
+        style="border:0;">
     </iframe>
 </div>
 
-<!-- FORM CONTENT -->
-<div class="form-wrapper">
-    <div class="form-box">
+<!-- REGISTER UI -->
+<div class="register-wrapper">
+    <div class="register-box">
 
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
-             style="width: 60px; margin-bottom: 20px;">
+             style="width: 60px; margin-bottom: 20px; background:white; padding:4px;">
 
-        <h1>Now let’s make you a Nike Member.</h1>
+        <h1>Now let's make you a Nike Member.</h1>
 
-        <p style="margin-bottom: 20px; font-size:14px;">
-            We've sent a code to<br>
-            <strong>your_email@example.com</strong> <a href="#">Edit</a>
-        </p>
+        <p>We've sent a code to <b>your_email@example.com</b></p>
 
         <!-- CODE -->
-        <label>Code*</label>
-        <input type="text" placeholder="Enter Code" required>
-        <p style="color:red; font-size:12px;">Required</p>
+        <div class="label">Code*</div>
+        <input type="text" placeholder="Enter Code">
 
         <!-- NAME -->
-        <div class="input-row">
-            <div style="flex:1;">
-                <label>First Name*</label>
-                <input type="text" required>
+        <div class="row-2">
+            <div>
+                <div class="label">First Name*</div>
+                <input type="text">
             </div>
-            <div style="flex:1;">
-                <label>Surname*</label>
-                <input type="text" required>
+            <div>
+                <div class="label">Surname*</div>
+                <input type="text">
             </div>
         </div>
 
         <!-- PASSWORD -->
-        <label>Password*</label>
-        <input type="password" required>
-        <p style="font-size:12px; margin-top:5px; line-height:1.4;">
-            ✕ Minimum of 8 characters<br>
-            ✕ Uppercase, lowercase letters and one number
+        <div class="label">Password*</div>
+        <input type="password" placeholder="Password">
+
+        <p style="margin-top:4px; font-size:13px;">
+            ✖ Minimum of 8 characters<br>
+            ✖ Uppercase, lowercase letters and one number
         </p>
 
         <!-- SHOPPING PREFERENCE -->
-        <label style="margin-top:15px;">Shopping Preference*</label>
-        <select required>
-            <option value="">Select Option</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
+        <div class="label">Shopping Preference*</div>
+        <select>
+            <option>Select One</option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Kids</option>
+            <option>All</option>
         </select>
 
         <!-- DATE OF BIRTH -->
-        <label style="margin-top:20px;">Date of Birth</label>
-        <div class="input-row">
-            <input type="number" placeholder="Day" min="1" max="31">
-            <input type="text" placeholder="Month">
-            <input type="number" placeholder="Year" min="1900" max="2025">
+        <div class="label">Date of Birth</div>
+        <div class="row-2">
+            <input type="text" placeholder="Day*">
+            <input type="text" placeholder="Month*">
+            <input type="text" placeholder="Year*">
         </div>
 
-        <p style="font-size:12px; margin-top:5px;">
-            Get a Nike Member Reward on your birthday.
-        </p>
+        <p style="font-size:12px; margin-top:4px;">Get a Nike Member Reward on your birthday.</p>
 
-        <!-- CHECKBOXES -->
+        <!-- CHECKBOX 1 -->
         <div class="checkbox-row">
             <input type="checkbox">
-            <label>Sign up for emails to get updates from Nike on products, offers and your Member benefits.</label>
+            <span>Sign up for emails to get updates from Nike.</span>
         </div>
 
+        <!-- CHECKBOX 2 -->
         <div class="checkbox-row">
             <input type="checkbox">
-            <label>I agree to Nike’s <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.</label>
+            <span>I agree to Nike's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>.</span>
         </div>
 
-        <!-- SUBMIT BUTTON -->
+        <!-- BUTTON -->
         <button class="btn">Create Account</button>
 
     </div>

@@ -20,7 +20,6 @@
         background: #000;
     }
 
-    /* Spline menerima mouse (efek hover aktif) */
     .bg-spline {
         position: fixed;
         inset: 0;
@@ -30,7 +29,6 @@
         pointer-events: auto !important;
     }
 
-    /* Kotak login DILEWATI mouse untuk klik tidak kena background */
     .login-wrapper {
         position: fixed;
         inset: 0;
@@ -38,7 +36,7 @@
         justify-content: center;
         align-items: center;
         z-index: 10;
-        pointer-events: none; /* IMPORTANT */
+        pointer-events: none;
     }
 
     .login-box {
@@ -47,7 +45,7 @@
         border-radius: 18px;
         padding: 40px 32px;
         box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-        pointer-events: auto; /* Form bisa diklik */
+        pointer-events: auto;
     }
 
     .login-box h1 {
@@ -77,12 +75,34 @@
         cursor: pointer;
         font-size: 15px;
     }
+
+    #country {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        display: none;
+    }
+
+    #change-btn {
+        cursor: pointer;
+        color: #0077ff;
+        text-decoration: underline;
+    }
+
+    #error-msg {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+        display: none;
+    }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND SPLINE → menerima mouse -->
 <div class="bg-spline">
     <iframe 
         src="https://my.spline.design/boxeshover-ZrkOuhJRUFOiCbMsVEdIHJk0/"
@@ -93,7 +113,6 @@
     </iframe>
 </div>
 
-<!-- LOGIN UI (tidak menghalangi mouse) -->
 <div class="login-wrapper">
     <div class="login-box">
 
@@ -102,24 +121,76 @@
 
         <h1>Enter your email to join us or sign in.</h1>
 
-        <p style="margin: 6px 0 20px 0;">
-            Indonesia <a href="#">Change</a>
+        <p style="margin: 6px 0 10px 0;">
+            <span id="current-country">Indonesia</span>
+            <span id="change-btn">Change</span>
         </p>
 
-        <label>Email*</label>
-        <input type="email" placeholder="Email" required>
-        <p style="color:red; font-size:13px;">Required</p>
+        <select name="country" id="country" autocomplete="off">
+            <option value="AF">Afghanistan</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+            <option value="ID" selected>Indonesia</option>
+        </select>
 
-        <p style="font-size:14px; margin-top:18px; line-height:1.5;">
-            By continuing, I agree to Your Store’s 
-            <a href="#">Privacy Policy</a> and 
-            <a href="#">Terms of Use</a>.
-        </p>
+        <label>Email</label>
+        <input id="emailInput" type="email" placeholder="Email" required>
 
-        <button class="btn">Continue</button>
+        <p id="error-msg">Please enter a valid email.</p>
 
+        <button id="continueBtn" class="btn">Continue</button>
     </div>
 </div>
+
+<script>
+    const changeBtn = document.getElementById("change-btn");
+    const select = document.getElementById("country");
+    const current = document.getElementById("current-country");
+
+    const continueBtn = document.getElementById("continueBtn");
+    const emailInput = document.getElementById("emailInput");
+    const errorMsg = document.getElementById("error-msg");
+
+    // Toggle dropdown
+    changeBtn.addEventListener("click", () => {
+        select.style.display = select.style.display === "block" ? "none" : "block";
+    });
+
+    // Update country text
+    select.addEventListener("change", () => {
+        current.textContent = select.options[select.selectedIndex].text;
+        select.style.display = "none";
+    });
+
+    // Filter allowed characters in email input
+    emailInput.addEventListener("input", () => {
+        emailInput.value = emailInput.value.replace(/[^a-zA-Z0-9@._]/g, "");
+    });
+
+    function isValidEmail(email) {
+        // RULE:
+        // 1+ chars before @
+        // 1+ chars after @
+        // dot exists after that part
+        // 1+ chars after dot
+        const regex = /^[A-Za-z0-9._]+@[A-Za-z0-9_]+\.[A-Za-z0-9_]+$/;
+        return regex.test(email);
+    }
+
+    continueBtn.addEventListener("click", () => {
+        const email = emailInput.value.trim();
+
+        if (email === "" || !isValidEmail(email)) {
+            errorMsg.style.display = "block";
+            emailInput.value = "";
+            window.location.href = "sign_in.html";
+            return;
+        }
+
+        // valid → go to register page
+        window.location.href = "register.html";
+    });
+</script>
 
 </body>
 </html>
