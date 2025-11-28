@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Create Account</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        /* --- Spline background --- */
+        .bg-spline {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: auto;
+            z-index: 0;
+        }
+
+        /* --- Wrapper --- */
+        .register-wrapper {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 40px;
+            z-index: 10;
+
+            /* agar spline tidak menghalangi */
+            pointer-events: none;
+        }
+
+        /* --- Box Form --- */
+        .register-box {
+            width: 340px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            max-height: 95%;
+            overflow-y: auto;
+
+            /* FIX PENTING untuk drag */
+            position: absolute;
+            cursor: move;
+            pointer-events: auto;
+        }
+
+        /* Input style */
+        .input-line {
+            width: 100%;
+            padding: 14px 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Red button fix */
+        .btn-create {
+            width: 100%;
+            background: #e53935;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 18px;
+        }
+        .btn-create:hover {
+            background: #c62828;
+        }
+
+        /* Google Button */
+        .btn-google {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            background: white;
+        }
+        .btn-google:hover {
+            background: #f5f5f5;
+        }
+
+        .google-icon {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spline -->
+    <div class="bg-spline">
+        <iframe src="https://my.spline.design/reactiveorb-E1QQSInSzvTUmAZo7dCLOVQ1/"
+                frameborder="0" width="100%" height="100%" style="border:0;">
+        </iframe>
+    </div>
+
+    <!-- REGISTER UI -->
+    <div class="register-wrapper">
+        <div class="register-box" id="dragBox">
+
+            <h1 style="font-size: 24px; margin-bottom: 8px;">Create an account</h1>
+            <p style="color:#666; margin-bottom: 22px;">Enter your details below</p>
+
+            <!-- Name -->
+            <input type="text" placeholder="Name" class="input-line">
+
+            <!-- Email -->
+            <input type="text" placeholder="Email or Phone Number" class="input-line">
+
+            <!-- Password -->
+            <input type="password" placeholder="Password" class="input-line">
+
+            <!-- BUTTON CREATE ACCOUNT -->
+            <button class="btn-create">Create Account</button>
+
+            <!-- BUTTON GOOGLE -->
+            <button class="btn-google">
+                <img src="../image/google.png" class="google-icon">
+                <span>Sign up with Google</span>
+            </button>
+
+            <p style="text-align:center; margin-top: 10px;">
+                Already have account? 
+                <a href="#" style="font-weight:bold;">Log in</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script>
+        /* --- Dragging --- */
+        const box = document.getElementById("dragBox");
+        let drag = false;
+        let offsetX = 0, offsetY = 0;
+
+        box.addEventListener("mousedown", (e) => {
+            drag = true;
+            offsetX = e.clientX - box.getBoundingClientRect().left;
+            offsetY = e.clientY - box.getBoundingClientRect().top;
+            box.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (drag) {
+                box.style.left = `${e.clientX - offsetX}px`;
+                box.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            drag = false;
+            box.style.cursor = "move";
+        });
+    </script>
+
+</body>
+</html>
