@@ -10,7 +10,7 @@
 
 <body>
     <!-- ===== MAIN NAVBAR ===== -->
-    <header class="w-full border-b bg-white">
+    <header class="w-full border-b bg-white z-10 relative">
         <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
 
             <!-- LEFT (menu) -->
@@ -354,6 +354,92 @@
                 <button class="text-2xl">🛒</button>
                 <a href="#"><button class="font-bold">Help</button></a>
                 <a href="#"><button class="font-bold">Sign in</button></a>
+                <!-- Container Icon / Sign In -->
+                <div class="relative" id="accountArea">
+                    <!-- SIGN IN Button (default hidden if logged in) -->
+                    <button id="signInBtn" class="font-bold">Sign In</button>
+
+                    <!-- USER ICON (default hidden unless logged in) -->
+                    <button id="userIcon"
+                        class="hidden w-10 h-10 rounded-full bg-red-500 flex items-center justify-center relative">
+                        <img src="../image/user (1).png" class="w-6 h-6">
+                    </button>
+
+                    <!-- DROPDOWN MENU -->
+                    <div id="accountDropdown"
+                    class="hidden fixed top-[72px] right-4 w-56 rounded-xl shadow-xl py-4 text-white"
+                        style="background: linear-gradient(135deg, #8B3A3A, #C85C5C); z-index: 9999;">
+
+                        <a href="manage-account.html" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10">
+                            <img src="../image/user (1).png" class="w-5">
+                            <span>Manage My Account</span>
+                        </a>
+
+                        <a href="my-orders.html" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10">
+                            <img src="../image/shopping-bag.png" class="w-5">
+                            <span>My Order</span>
+                        </a>
+
+                        <a href="my-reviews.html" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10">
+                            <img src="../image/star.png" class="w-5">
+                            <span>My Reviews</span>
+                        </a>
+
+                        <button id="logoutBtn" class="w-full flex items-center gap-3 px-4 py-2 hover:bg-white/10">
+                            <img src="../image/logout.png" class="w-5">
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+
+                <script>
+                    // =============================
+                    // SIMULASI LOGIN
+                    // =============================
+                    // Ubah ke true jika user sudah login (nanti diganti dengan sistem kamu)
+                    let isLoggedIn = true;
+
+                    const signInBtn = document.getElementById("signInBtn");
+                    const userIcon = document.getElementById("userIcon");
+                    const dropdown = document.getElementById("accountDropdown");
+
+                    // Tampilkan Sign In atau User Icon
+                    function updateUI() {
+                        if (isLoggedIn) {
+                            signInBtn.classList.add("hidden");
+                            userIcon.classList.remove("hidden");
+                        } else {
+                            signInBtn.classList.remove("hidden");
+                            userIcon.classList.add("hidden");
+                        }
+                    }
+                    updateUI();
+
+                    // Toggle dropdown ketika icon user diklik
+                    userIcon.addEventListener("click", () => {
+                        dropdown.classList.toggle("hidden");
+                    });
+
+                    // Klik di luar dropdown → close
+                    document.addEventListener("click", (e) => {
+                        if (!document.getElementById("accountArea").contains(e.target)) {
+                            dropdown.classList.add("hidden");
+                        }
+                    });
+
+                    // Tombol logout
+                    document.getElementById("logoutBtn").addEventListener("click", () => {
+                        isLoggedIn = false;
+                        dropdown.classList.add("hidden");
+                        updateUI();
+                    });
+
+                    // Tombol Sign In
+                    signInBtn.addEventListener("click", () => {
+                        window.location.href = "signin.html";
+                    });
+                </script>
+
             </div>
         </div>
     </header>

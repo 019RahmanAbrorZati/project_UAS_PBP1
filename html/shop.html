@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Shop</title>
+
+    <style>
+        /* Custom Checkbox */
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .checkbox.checked {
+            background-color: #2563eb;
+            /* biru */
+            border-color: #2563eb;
+        }
+
+        .checkbox.checked::after {
+            content: "✔";
+            font-size: 12px;
+            color: white;
+        }
+
+        /* Scroll Sidebar */
+        .sidebar-scroll {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- MAIN WRAPPER -->
+    <div class="w-full flex px-6 py-10 gap-10">
+
+        <!-- SIDEBAR FILTER -->
+        <div class="w-64 sidebar-scroll pr-4 border-r">
+
+            <!-- Title Dynamic -->
+            <h1 id="pageTitle" class="text-2xl font-bold mb-6">All Products (23)</h1>
+
+            <!-- FILTER WRAPPER -->
+            <div id="filterContainer" class="space-y-4">
+
+                <!-- Sale & Offers -->
+                <div class="border-b pb-2">
+                    <button class="w-full flex justify-between items-center py-3" onclick="toggleFilter('saleFilter')">
+                        <span class="font-semibold">Sale & Offers</span>
+                        <span id="saleFilterIcon" class="transition-transform duration-200 rotate-180">▲</span>
+                    </button>
+
+                    <div id="saleFilter" class="space-y-2">
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="w-5 h-5">
+                            <span>EXTRA 30% OFF*</span>
+                        </label>
+
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="w-5 h-5">
+                            <span>Sale</span>
+                        </label>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleFilter(id) {
+                        const content = document.getElementById(id);
+                        const icon = document.getElementById(id + "Icon");
+
+                        if (content.style.display === "none") {
+                            content.style.display = "block";
+                            icon.style.transform = "rotate(180deg)";
+                        } else {
+                            content.style.display = "none";
+                            icon.style.transform = "rotate(0deg)";
+                        }
+                    }
+                </script>
+
+                <!-- Gender -->
+                <div>
+                    <h2 class="font-semibold mb-2">Gender</h2>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Men"></div>
+                        <span>Men</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Women"></div>
+                        <span>Women</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="checkbox" data-filter="Unisex"></div>
+                        <span>Unisex</span>
+                    </div>
+                </div>
+
+                <!-- Kids -->
+                <div>
+                    <h2 class="font-semibold mb-2">Kids</h2>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Boys"></div>
+                        <span>Boys</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="checkbox" data-filter="Girls"></div>
+                        <span>Girls</span>
+                    </div>
+                </div>
+
+                <!-- Shop by Price -->
+                <div>
+                    <h2 class="font-semibold mb-2">Shop By Price</h2>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Under Rp700.000"></div>
+                        <span>Under Rp700.000</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Rp700.000 - Rp1.500.000"></div>
+                        <span>Rp700.000 - Rp1.500.000</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Rp1.500.001 - Rp2.999.999"></div>
+                        <span>1.500.001 - 2.999.999</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="checkbox" data-filter="Over Rp3.000.000"></div>
+                        <span>Over Rp3.000.000</span>
+                    </div>
+                </div>
+
+                <!-- Brand -->
+                <div>
+                    <h2 class="font-semibold mb-2">Brand</h2>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Nike Sportswear"></div>
+                        <span>Nike Sportswear</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Jordan"></div>
+                        <span>Jordan</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="Nike By You"></div>
+                        <span>Nike By You</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="checkbox" data-filter="NikeLab"></div>
+                        <span>NikeLab</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="checkbox" data-filter="ACG"></div>
+                        <span>ACG</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="flex-1">
+            <div id="productGrid" class="grid grid-cols-4 gap-6">
+                <!-- Example product template -->
+                <div class="border p-3 rounded shadow-sm">
+                    <img src="https://via.placeholder.com/300" class="rounded mb-3">
+                    <p class="font-semibold">Nike Dunk Low</p>
+                    <p class="text-red-600 font-bold">Rp 1.859.000</p>
+                </div>
+
+                <div class="border p-3 rounded shadow-sm">
+                    <img src="https://via.placeholder.com/300" class="rounded mb-3">
+                    <p class="font-semibold">Nike Air Max</p>
+                    <p class="text-red-600 font-bold">Rp 2.100.000</p>
+                </div>
+
+                <div class="border p-3 rounded shadow-sm">
+                    <img src="https://via.placeholder.com/300" class="rounded mb-3">
+                    <p class="font-semibold">Nike Jordan 1</p>
+                    <p class="text-red-600 font-bold">Rp 3.200.000</p>
+                </div>
+
+                <div class="border p-3 rounded shadow-sm">
+                    <img src="https://via.placeholder.com/300" class="rounded mb-3">
+                    <p class="font-semibold">Nike Jordan 1</p>
+                    <p class="text-red-600 font-bold">Rp 3.200.000</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll(".checkbox");
+        const pageTitle = document.getElementById("pageTitle");
+        const productGrid = document.getElementById("productGrid");
+
+        function updateTitle() {
+            const activeFilters = [...checkboxes].filter(c => c.classList.contains("checked"));
+
+            if (activeFilters.length === 0) {
+                pageTitle.textContent = `All Products (${productGrid.children.length})`;
+            } else if (activeFilters.length === 1) {
+                pageTitle.textContent = activeFilters[0].dataset.filter;
+            } else {
+                pageTitle.textContent = `All Products (${productGrid.children.length})`;
+            }
+        }
+
+        checkboxes.forEach(box => {
+            box.addEventListener("click", function () {
+                this.classList.toggle("checked");
+                updateTitle();
+            });
+        });
+
+        updateTitle();
+    </script>
+
+    <script>
+        // =====================
+        // PRODUCT DATA READING
+        // =====================
+        const products = [...document.querySelectorAll("#productGrid > div")].map(el => {
+            const priceText = el.querySelector("p.text-red-600").innerText;
+            const priceNumber = parseInt(priceText.replace(/[^0-9]/g, "")); // ambil angka saja
+
+            return {
+                el,
+                price: priceNumber
+            };
+        });
+
+        // =====================
+        // FILTER FUNCTION
+        // =====================
+        const priceFilters = {
+            "Under Rp700.000": p => p < 700000,
+            "Rp700.000 - Rp1.500.000": p => p >= 700000 && p <= 1500000,
+            "Rp1.500.001 - Rp2.999.999": p => p >= 1500001 && p <= 2999999,
+            "Over Rp3.000.000": p => p > 3000000
+        };
+
+
+        function applyFilters() {
+            // Ambil filter yang aktif
+            const checked = [...document.querySelectorAll(".checkbox.active")]
+                .map(el => el.dataset.filter);
+
+            products.forEach(product => {
+                // Jika tidak ada filter → tampilkan semua
+                if (checked.length === 0) {
+                    product.el.style.display = "block";
+                    return;
+                }
+
+                // Cek apakah produk cocok salah satu filter
+                let match = false;
+                checked.forEach(filterName => {
+                    if (priceFilters[filterName](product.price)) {
+                        match = true;
+                    }
+                });
+
+                product.el.style.display = match ? "block" : "none";
+            });
+
+            updateFilterCounts();
+        }
+
+        // =====================
+        // UPDATE FILTER COUNTS
+        // =====================
+        function updateFilterCounts() {
+            document.querySelectorAll(".checkbox").forEach(cb => {
+                let count = 0;
+
+                products.forEach(p => {
+                    if (priceFilters[cb.dataset.filter](p.price)) {
+                        count++;
+                    }
+                });
+
+                // Tambahkan jumlah ke label
+                cb.parentElement.querySelector("span").innerText =
+                    `${cb.dataset.filter} (${count})`;
+            });
+        }
+
+        // =====================
+        // CHECKBOX INTERACTION
+        // =====================
+        document.querySelectorAll(".checkbox").forEach(cb => {
+            cb.classList.add("w-5", "h-5", "border", "border-gray-500", "cursor-pointer");
+
+            cb.addEventListener("click", () => {
+                cb.classList.toggle("active");
+                cb.classList.toggle("bg-black");
+                applyFilters();
+            });
+        });
+
+        // init
+        updateFilterCounts();
+    </script>
+
+
+</body>
+
+</html>
